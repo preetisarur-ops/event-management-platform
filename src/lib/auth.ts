@@ -70,7 +70,7 @@ export const authOptions: NextAuthOptions = {
       return session;
     },
   },
-  secret: process.env.AUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET || process.env.AUTH_SECRET,
 };
 
 export function hasRole(userRoles: string[], required: string | string[]): boolean {
